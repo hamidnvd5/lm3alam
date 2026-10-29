@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>منصة المعلم - مكناس</title>
+<style>
+:root{--bg:#F6EFE3;--card:#fff;--tx:#1d2433;--mu:#6b7280;--pr:#243B8F;--ac:#E2703A;--bd:#eadfce;--sh:0 2px 10px rgba(36,59,143,.10);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1426;--card:#1a2140;--tx:#eef1fb;--mu:#a3abc7;--pr:#7f98f0;--bd:#2a3358;--sh:none;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#0f1426;--card:#1a2140;--tx:#eef1fb;--mu:#a3abc7;--pr:#7f98f0;--bd:#2a3358;--sh:none;color-scheme:dark}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",Tahoma,sans-serif}
+body{padding-bottom:84px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:linear-gradient(135deg,#243B8F,#16276b);color:#fff;padding:12px 14px 14px;border-radius:0 0 22px 22px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+.row{display:flex;align-items:center;justify-content:space-between;direction:ltr;gap:8px}
+.ib{width:40px;height:40px;border:0;border-radius:12px;background:rgba(255,255,255,.15);color:#fff;font-size:19px;display:grid;place-items:center;cursor:pointer}
+.ttl{flex:1;text-align:center;font-weight:800;font-size:18px;direction:rtl}
+.ttl small{display:block;font-weight:400;font-size:11px;opacity:.85}
+.sr{margin-top:12px;position:relative}
+.sr input{width:100%;border:0;border-radius:14px;padding:12px 14px;font-size:15px;background:#fff;color:#1d2433;outline:0;font-family:inherit}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:12px 14px 4px;scrollbar-width:none}
+.chip{flex:none;border:1px solid var(--bd);background:var(--card);color:var(--tx);padding:8px 14px;border-radius:99px;font-size:14px;font-family:inherit;cursor:pointer}
+.chip.on{background:var(--ac);border-color:var(--ac);color:#fff;font-weight:700}
+main{padding:10px 14px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(135deg,var(--ac),#c4531f);color:#fff;border-radius:18px;padding:16px;margin-bottom:12px;box-shadow:var(--sh)}
+.hero b{font-size:16px}.hero p{margin:6px 0 0;font-size:13px;opacity:.95;line-height:1.6}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;background:rgba(255,255,255,.12);pointer-events:none}.hero::before{width:130px;height:130px;inset-inline-end:-35px;top:-40px}.hero::after{width:80px;height:80px;inset-inline-end:40px;bottom:-35px}.av svg{width:30px;height:30px}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:14px;margin-bottom:12px;box-shadow:var(--sh)}
+.top{display:flex;gap:12px;align-items:center}
+.av{width:52px;height:52px;border-radius:16px;display:grid;place-items:center;font-size:26px;flex:none;color:#fff}
+.nm{font-weight:800;font-size:17px}.sp{font-size:13px;color:var(--mu);margin-top:2px}
+.fv{margin-inline-start:auto;border:0;background:none;font-size:24px;cursor:pointer;color:var(--mu)}
+.fv.on{color:#e0245e}
+.ds{margin:10px 0 12px;font-size:14px;line-height:1.7;color:var(--tx)}
+.act{display:flex;gap:10px}
+.act a{flex:1;text-align:center;text-decoration:none;padding:11px;border-radius:12px;font-weight:700;font-size:14px;color:#fff}
+.call{background:var(--pr)}.wa{background:#1faa59}
+.empty{text-align:center;color:var(--mu);padding:40px 10px}
+label{display:block;font-weight:700;margin:14px 0 6px;font-size:14px}
+select,input.n{width:100%;padding:12px;border-radius:12px;border:1px solid var(--bd);background:var(--card);color:var(--tx);font-size:16px;font-family:inherit}
+.btn{display:block;width:100%;border:0;margin-top:16px;padding:14px;border-radius:14px;background:var(--ac);color:#fff;font-weight:800;font-size:16px;font-family:inherit;text-align:center;text-decoration:none;cursor:pointer}
+.res{margin-top:14px;text-align:center;background:var(--bg);border-radius:14px;padding:14px}
+.res b{font-size:26px;color:var(--ac)}
+.note{font-size:12px;color:var(--mu);line-height:1.6;margin-top:10px}
+nav{position:fixed;inset:auto 0 0 0;background:var(--card);border-top:1px solid var(--bd);display:flex;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));z-index:6}
+nav button{flex:1;border:0;background:none;color:var(--mu);font-family:inherit;font-size:11px;padding:6px 0;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px}
+nav button span{font-size:21px}
+nav button.on{color:var(--ac);font-weight:800}
+.ov{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:9;display:none}
+.ov.show{display:block}
+.dr{position:fixed;top:0;bottom:0;left:0;width:78%;max-width:300px;background:var(--card);padding:calc(20px + env(safe-area-inset-top,0px)) 16px 16px;box-shadow:4px 0 20px rgba(0,0,0,.3)}
+.dr h3{margin:0 0 4px;color:var(--pr)}.dr p{margin:0 0 14px;font-size:12px;color:var(--mu)}
+.dr a,.dr button{display:block;width:100%;text-align:start;padding:13px 6px;border:0;border-bottom:1px solid var(--bd);background:none;color:var(--tx);font-size:15px;text-decoration:none;font-family:inherit;cursor:pointer}
+#sp{position:fixed;inset:0;z-index:99;background:linear-gradient(160deg,#243B8F 0%,#16276b 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;text-align:center;overflow:hidden;transition:opacity .45s,visibility .45s}
+#sp.out{opacity:0;visibility:hidden}
+#sp::before,#sp::after{content:"";position:absolute;border-radius:50%;background:rgba(226,112,58,.16)}
+#sp::before{width:340px;height:340px;top:-120px;inset-inline-end:-120px}
+#sp::after{width:240px;height:240px;bottom:-90px;inset-inline-start:-80px}
+#sp svg{position:relative;width:112px;height:112px;filter:drop-shadow(0 10px 24px rgba(0,0,0,.35));animation:pop .7s cubic-bezier(.2,1.3,.4,1) both}
+.sn{position:relative;margin-top:22px;font-size:30px;font-weight:800;animation:up .6s .25s both}
+.ss{position:relative;margin-top:6px;font-size:14px;opacity:.85;animation:up .6s .4s both}
+.sb{position:absolute;bottom:calc(60px + env(safe-area-inset-bottom,0px));width:130px;height:4px;border-radius:9px;background:rgba(255,255,255,.2);overflow:hidden}
+.sb i{display:block;height:100%;width:0;background:#E2703A;border-radius:9px;animation:fill 1.3s .2s ease-out forwards}
+@keyframes pop{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes up{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+@keyframes fill{to{width:100%}}
+@media (prefers-reduced-motion:reduce){#sp *{animation:none!important}.sb i{width:100%}}
+</style>
+</head>
+<body>
+<div id="sp"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#E2703A"/><path d="M9 38V22l15-12 15 12v16z" fill="#fff"/><path d="M18.5 38V27.5a5.5 5.5 0 0 1 11 0V38z" fill="#243B8F"/><circle cx="24" cy="19" r="2.4" fill="#E2703A"/></svg><div class="sn" id="sn"></div><div class="ss" id="ss"></div><div class="sb"><i></i></div></div>
+<header>
+ <div class="row">
+  <button class="ib" id="mn" aria-label="menu">☰</button>
+  <div class="ttl" style="display:flex;align-items:center;justify-content:center;gap:9px"><svg width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="13" fill="#E2703A"/><path d="M9 38V22l15-12 15 12v16z" fill="#fff"/><path d="M18.5 38V27.5a5.5 5.5 0 0 1 11 0V38z" fill="#243B8F"/><circle cx="24" cy="19" r="2.4" fill="#E2703A"/></svg><div><span id="t1"></span><small id="t2"></small></div></div>
+  <div style="display:flex;gap:6px"><button class="ib" id="lg" style="font-size:13px;font-weight:700">FR</button><button class="ib" id="th">🌙</button></div>
+ </div>
+ <div class="sr"><input id="q" type="search"></div>
+</header>
+<div class="chips" id="chips"></div>
+<main id="m"></main>
+<nav id="nv"></nav>
+<div class="ov" id="ov"><div class="dr" id="dr"></div></div>
+<script>
+var FORM="https://docs.google.com/forms/d/e/1FAIpQLSd3T-bjjutTH_6wcHa6jZzaHL2W0MF2mC-vROOVMEdVbPIYxA/viewform";
+var SITE="https://www.lm3alam-maroc.online/";
+var P={pa:"🎨",ca:"🪚",gy:"🏛️",ma:"🧱",ze:"🧩"};
+var SV='<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">';var IC={pa:SV+'<rect x="4" y="3" width="13" height="6" rx="1.5"/><path d="M17 6h3v5h-8v3"/><rect x="10" y="14" width="4" height="7" rx="1"/></svg>',ca:SV+'<path d="M15 3l6 6-3 3-6-6z"/><path d="M12 9l-8 9 2 2 9-8"/></svg>',gy:SV+'<path d="M5 21V11a7 7 0 0 1 14 0v10z"/><path d="M9 21v-6a3 3 0 0 1 6 0v6"/></svg>',ma:SV+'<rect x="3" y="3" width="8" height="8" rx="1"/><rect x="13" y="3" width="8" height="8" rx="1"/><rect x="3" y="13" width="8" height="8" rx="1"/><rect x="13" y="13" width="8" height="8" rx="1"/></svg>',ze:SV+'<path d="M12 2l2.6 5.4L20 6l-1.4 5.6L22 14l-5.4 1.4L18 21l-5.6-2L8 22l-.4-5.6L2 14l4.4-3.4L5 5l5.6 1.4z"/></svg>'};
+var COL={pa:"#E2703A",ca:"#8a5a2b",gy:"#5b6fc7",ma:"#6b7280",ze:"#1f8a8a"};
+var D=[["ياسين","Yassine","pa","صباغة داخلية وخارجية بإتقان، مع تشطيبات نظيفة واحترام تام للمواعيد.","212645077790"],
+["بدر","Badr","pa","صباغة المنازل والشقق وتجديد الجدران بجودة عالية وأسعار مناسبة.","212665335362"],
+["سفيان","Soufiane","pa","صباغة ديكورية عصرية بألوان متناسقة وتشطيب احترافي ونظافة بعد العمل.","212649654966"],
+["دريس","Driss","pa","صباغة وتجديد الواجهات والمنازل بخبرة طويلة ودقة في الإنجاز.","212662517599"],
+["إسماعيل","Ismaïl","ca","نجارة على المقاس: أبواب، خزائن ومطابخ بخشب مضمون وتشطيب دقيق.","212631624435"],
+["أيوب","Ayoub","ca","تصنيع وتركيب الأثاث الخشبي والأبواب والنوافذ مع إصلاح جميع أنواع النجارة.","212664058769"],
+["نوردين","Nourdine","ca","نجارة عامة وتفصيل الدواليب والغرف وإصلاح الأثاث المنزلي بدقة وإتقان.","212770181257"],
+["مصطفى","Mustapha","gy","جبس بورد وأسقف معلقة بتصاميم عصرية وإضاءة مخفية وتشطيب راقٍ.","212767536834"],
+["مروان","Marouane","gy","ديكورات جبس وأقواس وفواصل وأعمال زخرفية دقيقة على المقاس.","212649135446"],
+["مروان","Marouane","ma","تركيب الرخام والجرانيت للمطابخ والأرضيات والدرج بدقة عالية.","212772020771"],
+["محمد","Mohamed","ma","معلم رخام محترف في التركيب والصقل والتشطيبات الفاخرة للمنازل والمحلات.","212775030870"],
+["بحجي محمد","Bahji Mohamed","ma","تركيب وتلميع الرخام والجرانيت بخبرة وإتقان وتشطيبات نظيفة.","212706148203"],
+["زكرياء","Zakaria","ze","تركيب الزليج التقليدي والعصري بإتقان وتناسق في الألوان والتفاصيل.","212612571879"]];
+var AR=[["📖 دليل المقالات","📖 Guide des articles","كيفاش تحسب ميزانية الترميم بلا مفاجآت؟","تعلم كيفاش تحسب ميزانية الترميم والصباغة، وشحال تخبي كهامش طوارئ.","https://www.lm3alam-maroc.online/2026/09/blog-post_878.html"],["💡 نصائح الحرفيين","💡 Conseils aux artisans","كيفاش تحدد ثمن خدماتك كحرفي بلا ما تخسر ولا تنفر الزبناء","كيفاش يحسب الحرفي ثمن خدمتو (يد عاملة ومواد) ويشرحو للزبون بثقة.","https://www.lm3alam-maroc.online/2026/09/blog-post_837.html"],["💰 الأسعار والتكاليف","💰 Prix et coûts","أنواع الرخام والجرانيت وأثمنتهم فمكناس: دليل شامل قبل ما تختار","أنواع الرخام والجرانيت بمكناس مع أثمنة تقريبية، وفين تستعمل كل نوع.","https://www.lm3alam-maroc.online/2026/09/blog-post_24.html"]];
+var PR={pa:[[30,50],[50,70],[70,90]],ma:[[250,450],[350,600],[500,900]],ze:[150,250,450],gy:[120,180,300],ca:[700,1200,2000]};
+var T={ar:{t1:"منصة المعلم",t2:"دليل الحرفيين بمكناس",q:"ابحث عن معلم أو خدمة...",all:"الكل",pa:"صباغة",ca:"نجارة",gy:"جبس",ma:"رخام",ze:"زليج",home:"الرئيسية",art:"المقالات",fav:"المفضلة",calc:"الحاسبة",add:"أضف خدمتك",call:"📞 اتصال",wa:"💬 واتساب",city:"مكناس",hero:"تواصل مباشر مع أفضل المعلمين",herop:"بدون وسيط: اتصل أو راسل المعلم على واتساب مباشرة.",none:"ما كاين حتى نتيجة",nofav:"ما زدتي حتى معلم للمفضلة. كليكي على القلب ♡",svc:"نوع الخدمة",lvl:"مستوى الجودة",l0:"اقتصادي",l1:"متوسط",l2:"راقي",area:"المساحة (بالمتر المربع)",go:"احسب التكلفة التقريبية",est:"التكلفة التقريبية",dh:"درهم",cn:"الأثمنة تقديرية فقط. الثمن النهائي كيتحدد مع المعلم بعد المعاينة. أثمنة الصباغة (يد عاملة + مواد) مبنية على مصادر مغربية لسنة 2026. باقي الخدمات أرقام مؤقتة.",ah:"واش نتا حرفي؟",ap:"سجل خدمتك مجانا فمنصة المعلم. عمر الاستمارة، وغادي نراجعو الطلب قبل ما يبان.",ab:"📝 سجل دابا",ad:"وافق على نشر اسمك ورقمك فالاستمارة. كل طلب كيتراجع قبل النشر.",menu:"روابط مهمة",site:"زيارة الموقع",pv:"سياسة الخصوصية",tm:"الشروط والأحكام",ab2:"من نحن",ct:"اتصل بنا",msg:"السلام عليكم معلم "},
+fr:{t1:"Plateforme Lm3alam",t2:"Annuaire des artisans de Meknès",q:"Rechercher un artisan ou un service...",all:"Tous",pa:"Peinture",ca:"Menuiserie",gy:"Plâtre",ma:"Marbre",ze:"Zellige",home:"Accueil",art:"Articles",fav:"Favoris",calc:"Calculateur",add:"Ajouter",call:"📞 Appeler",wa:"💬 WhatsApp",city:"Meknès",hero:"Contact direct avec les meilleurs artisans",herop:"Sans intermédiaire : appelez ou écrivez sur WhatsApp.",none:"Aucun résultat",nofav:"Aucun favori. Touchez le cœur ♡",svc:"Type de service",lvl:"Niveau de qualité",l0:"Économique",l1:"Moyen",l2:"Haut de gamme",area:"Surface (m²)",go:"Calculer le coût estimé",est:"Coût estimé",dh:"MAD",cn:"Prix indicatifs. Le prix final est fixé avec l’artisan après visite. Peinture (main-d’œuvre + matériaux) : sources marocaines 2026. Autres services : chiffres provisoires.",ah:"Vous êtes artisan ?",ap:"Inscrivez votre service gratuitement. Remplissez le formulaire ; nous vérifions chaque demande avant publication.",ab:"📝 S’inscrire",ad:"Acceptez la publication de votre nom et numéro dans le formulaire. Chaque demande est vérifiée.",menu:"Liens utiles",site:"Visiter le site",pv:"Politique de confidentialité",tm:"Conditions d’utilisation",ab2:"À propos",ct:"Contact",msg:"Bonjour "}};
+var S={lang:"ar",theme:"",fav:[],cat:"all",q:"",tab:"home",c:{s:"pa",l:1,a:""}};
+function ld(){try{var x=JSON.parse(localStorage.getItem("lm3")||"{}");if(x.lang)S.lang=x.lang;if(x.theme)S.theme=x.theme;if(x.fav)S.fav=x.fav}catch(e){}}
+function sv(){try{localStorage.setItem("lm3",JSON.stringify({lang:S.lang,theme:S.theme,fav:S.fav}))}catch(e){}}
+function t(k){return T[S.lang][k]}
+function L(a,f){return S.lang=="ar"?a:f}
+function sub(){var n=$("fn").value.trim(),p=$("fp").value.replace(/\s/g,""),d=$("fd").value.trim(),s=$("fsp").value,e=$("fe"),btn=$("fs");
+if(!n||!d||!/^0[5-7][0-9]{8}$/.test(p)||!$("fc").checked){e.textContent=L("عمر كل الخانات، دخل رقم هاتف صحيح (مثلا 0612345678)، وعلم على الموافقة.","Remplissez tous les champs, entrez un numéro valide (ex. 0612345678) et cochez l’accord.");return}
+e.textContent="";btn.disabled=true;var b=new URLSearchParams();b.append("entry.149207290",n);b.append("entry.1689526861",p);b.append("entry.631522235",d);b.append("entry.2065018814","كنوافق على نشر اسمي ورقمي فالتطبيق");b.append("entry.488228130",s);
+fetch(FORM.replace("viewform","formResponse"),{method:"POST",mode:"no-cors",body:b}).then(function(){$("fb").innerHTML='<div class="res"><b>✅</b><br>'+L("توصلنا بطلبك. غادي نراجعوه ونتواصلو معاك.","Demande reçue. Nous la vérifions et vous contactons.")+'</div>'}).catch(function(){btn.disabled=false;var w="https://wa.me/212693784331?text="+encodeURIComponent("السلام عليكم، بغيت نزيد خدمتي فمنصة المعلم.\nالاسم: "+n+"\nالهاتف: "+p+"\nالتخصص: "+s+"\nالوصف: "+d);e.innerHTML=L("ما قدرناش نصيفطو الطلب دابا. صيفطو عبر واتساب:","Envoi impossible pour le moment. Envoyez par WhatsApp :")+' <a href="'+w+'" target="_blank" rel="noopener" style="color:var(--ac);font-weight:700">💬 WhatsApp</a>'})}
+function $(i){return document.getElementById(i)}
+function ap(){var h=document.documentElement;h.lang=S.lang;h.dir=S.lang=="ar"?"rtl":"ltr";if(S.theme)h.setAttribute("data-theme",S.theme);else h.removeAttribute("data-theme");
+$("t1").textContent=t("t1");$("t2").textContent=t("t2");$("q").placeholder=t("q");$("lg").textContent=S.lang=="ar"?"FR":"AR";
+var dk=S.theme?S.theme=="dark":matchMedia("(prefers-color-scheme: dark)").matches;$("th").textContent=dk?"☀️":"🌙";}
+function card(i){var d=D[i],c=d[2],f=S.fav.indexOf(i)>-1,n=S.lang=="ar"?d[0]:d[1],w=encodeURIComponent(t("msg")+n);
+return '<div class="card"><div class="top"><div class="av" style="background:'+COL[c]+'">'+IC[c]+'</div><div><div class="nm">'+n+'</div><div class="sp">'+P[c]+" "+t(c)+" · 📍 "+t("city")+'</div></div><button class="fv'+(f?" on":"")+'" data-f="'+i+'">'+(f?"♥":"♡")+'</button></div><div class="ds">'+d[3]+'</div><div class="act"><a class="call" href="tel:+'+d[4]+'">'+t("call")+'</a><a class="wa" href="https://wa.me/'+d[4]+"?text="+w+'" target="_blank" rel="noopener">'+t("wa")+'</a></div></div>';}
+function list(ids){var q=S.q.trim().toLowerCase();var o=ids.filter(function(i){var d=D[i];if(S.cat!="all"&&d[2]!=S.cat)return false;return !q||(d[0]+d[1]+d[3]+t(d[2])).toLowerCase().indexOf(q)>-1});return o.length?o.map(card).join(""):'<div class="empty">'+t("none")+'</div>'}
+function rd(){ap();var all=D.map(function(_,i){return i});var m="";
+$("chips").style.display=S.tab=="home"||S.tab=="fav"?"flex":"none";$("q").parentNode.style.display=S.tab=="home"||S.tab=="fav"?"block":"none";
+$("chips").innerHTML=["all","pa","ca","gy","ma","ze"].map(function(k){return '<button class="chip'+(S.cat==k?" on":"")+'" data-c="'+k+'">'+(k=="all"?"📍 ":P[k]+" ")+t(k)+'</button>'}).join("");
+if(S.tab=="home")m='<div class="hero"><b>'+t("hero")+'</b><p>'+t("herop")+'</p></div>'+list(all);
+else if(S.tab=="fav")m=S.fav.length?list(S.fav):'<div class="empty">'+t("nofav")+'</div>';
+else if(S.tab=="art"){m='<div class="hero"><b>'+L("📚 مقالات ونصائح","📚 Articles et conseils")+'</b><p>'+L("مقالات عملية على الأثمنة وكيفاش تختار المعلم. كتتفتح فـ Chrome.","Articles pratiques sur les prix et le choix de l’artisan. Ils s’ouvrent dans Chrome.")+'</p></div>'+AR.map(function(a){return '<div class="card"><div class="sp" style="color:var(--ac);font-weight:700">'+L(a[0],a[1])+'</div><div class="nm" style="margin-top:6px;line-height:1.5">'+a[2]+'</div><div class="ds">'+a[3]+'</div><a class="btn" style="margin-top:0" href="'+a[4]+'" target="_blank" rel="noopener">'+L("اقرأ المقال ↗","Lire l’article ↗")+'</a></div>'}).join("")+'<a class="btn" style="background:var(--pr)" href="'+SITE+'" target="_blank" rel="noopener">'+L("🌐 كل المقالات فـ Chrome","🌐 Tous les articles dans Chrome")+'</a>'}
+else if(S.tab=="calc"){var c=S.c;m='<div class="card"><label>'+t("svc")+'</label><select id="cs">'+["pa","ma","ze","gy","ca"].map(function(k){return '<option value="'+k+'"'+(c.s==k?" selected":"")+'>'+P[k]+" "+t(k)+'</option>'}).join("")+'</select><label>'+t("lvl")+'</label><select id="cl">'+[0,1,2].map(function(k){return '<option value="'+k+'"'+(c.l==k?" selected":"")+'>'+t("l"+k)+'</option>'}).join("")+'</select><label>'+t("area")+'</label><input class="n" id="ca" type="number" inputmode="decimal" min="0" value="'+c.a+'"><button class="btn" id="cg">'+t("go")+'</button><div class="res" id="cr" style="display:none">'+t("est")+'<br><b id="cv"></b><div class="note" id="cx"></div></div><div class="note">'+t("cn")+'</div></div><div class="card"><div class="top"><div class="av" style="background:var(--pr)">ℹ️</div><div class="nm">'+L("كيفاش كتخدم الحاسبة؟","Comment fonctionne le calculateur ?")+'</div></div><div class="ds">'+L("اختار نوع الخدمة ومستوى الجودة، ودخل المساحة بالمتر المربع. الحاسبة كتعطيك نطاق سعري تقريبي باش تخطط للميزانية قبل ما تتواصل مع المعلم. الثمن النهائي كيتحدد بعد المعاينة، حيت كيتأثر بحالة الجدران وتعقيد التصميم ونوع المواد.","Choisissez le service et le niveau de qualité, puis entrez la surface en m². Le calculateur donne une fourchette indicative pour préparer votre budget avant de contacter l’artisan. Le prix final est fixé après visite, car il dépend de l’état des murs, de la complexité du travail et des matériaux.")+'</div></div><div class="card"><div class="nm">📞 '+L("بغيتي تسعيرة دقيقة؟","Besoin d’un devis précis ?")+'</div><div class="ds">'+L("تواصل معانا مباشرة، وغادي نوجهوك لمعلم ثقة فمكناس بلا وسيط.","Contactez-nous directement : nous vous orientons vers un artisan de confiance à Meknès, sans intermédiaire.")+'</div><div class="act"><a class="call" href="tel:+212693784331">'+t("call")+'</a><a class="wa" href="https://wa.me/212693784331?text='+encodeURIComponent(L("السلام عليكم، بغيت تسعيرة دقيقة لمشروعي","Bonjour, je souhaite un devis précis pour mon projet"))+'" target="_blank" rel="noopener">'+t("wa")+'</a></div></div>'}
+else m='<div class="card" id="fb"><div class="top"><div class="av" style="background:var(--ac)">🛠️</div><div class="nm">'+t("ah")+'</div></div><div class="ds">'+L("سجل خدمتك مجانا. كل طلب كيتراجع قبل ما يبان فالتطبيق.","Inscrivez votre service gratuitement. Chaque demande est vérifiée avant publication.")+'</div><label>'+L("الاسم","Nom")+'</label><input class="n" id="fn" autocomplete="name"><label>'+L("رقم الهاتف","Téléphone")+'</label><input class="n" id="fp" type="tel" inputmode="tel" placeholder="06XXXXXXXX" style="direction:ltr"><label>'+L("التخصص","Spécialité")+'</label><select id="fsp">'+[["pa","صباغة"],["ca","نجارة"],["gy","جبس"],["ma","رخام"],["ze","زليج"]].map(function(x){return '<option value="'+x[1]+'">'+P[x[0]]+" "+t(x[0])+'</option>'}).join("")+'</select><label>'+L("وصف قصير للخدمة","Description courte")+'</label><input class="n" id="fd"><label style="display:flex;gap:10px;align-items:flex-start;font-weight:400"><input type="checkbox" id="fc" style="width:22px;height:22px;flex:none"><span>'+L("كنوافق على نشر اسمي ورقمي فالتطبيق","J’accepte la publication de mon nom et de mon numéro dans l’application")+'</span></label><div class="note" id="fe" style="color:#d33"></div><button class="btn" id="fs">'+L("📝 صيفط الطلب","📝 Envoyer la demande")+'</button><div class="note">'+L("غادي نراجعو الطلب قبل النشر.","Nous vérifions la demande avant publication.")+'</div></div>';
+$("m").innerHTML=m;
+$("nv").innerHTML=[["home","🏠"],["art","📚"],["fav","♥"],["calc","🧮"],["add","➕"]].map(function(x){return '<button data-t="'+x[0]+'" class="'+(S.tab==x[0]?"on":"")+'"><span>'+x[1]+'</span>'+t(x[0])+'</button>'}).join("");
+$("dr").innerHTML='<h3>'+t("t1")+'</h3><p>'+t("menu")+'</p><button data-t="home">🛠️ '+L("كل الحرفيين","Tous les artisans")+'</button><button data-t="art">📚 '+L("المقالات والنصائح","Articles et conseils")+'</button><a href="'+SITE+'p/blog-page_841.html" target="_blank" rel="noopener">🔒 '+t("pv")+'</a><a href="'+SITE+'p/blog-page_17.html" target="_blank" rel="noopener">📄 '+t("tm")+'</a><a href="https://wa.me/212693784331?text='+encodeURIComponent(L("السلام عليكم، بغيت نستفسر على منصة المعلم","Bonjour, j’ai une question sur la plateforme"))+'" target="_blank" rel="noopener">💬 '+L("تواصل معنا","Nous contacter")+'</a>';}
+document.addEventListener("click",function(e){var b=e.target.closest("[data-f],[data-c],[data-t],#cg,#mn,#lg,#th,#ov,#fs");if(!b)return;
+if(b.id=="fs"){sub();return}
+if(b.id=="ov"){if(e.target.id=="ov")$("ov").classList.remove("show");return}
+if(b.id=="mn"){$("ov").classList.add("show");return}
+if(b.id=="lg"){S.lang=S.lang=="ar"?"fr":"ar";sv();rd();return}
+if(b.id=="th"){var dk=S.theme?S.theme=="dark":matchMedia("(prefers-color-scheme: dark)").matches;S.theme=dk?"light":"dark";sv();rd();return}
+if(b.id=="cg"){var s=$("cs").value,l=+$("cl").value,a=parseFloat($("ca").value);S.c={s:s,l:l,a:$("ca").value};if(!(a>0)){$("ca").focus();return}var v=PR[s][l],lo=Array.isArray(v)?v[0]:v*0.9,hi=Array.isArray(v)?v[1]:v*1.1;$("cr").style.display="block";$("cv").textContent=Math.round(lo*a).toLocaleString("fr-FR")+" – "+Math.round(hi*a).toLocaleString("fr-FR")+" "+t("dh");$("cx").textContent=({pa:L("يد عاملة + مواد","Main-d’œuvre + matériaux"),ma:L("ثمن الحجر فقط. التركيب كيتزاد بزيادة.","Prix de la pierre seule. La pose est en supplément.")}[s])||L("رقم مؤقت، خاصك تأكده مع المعلم.","Chiffre provisoire, à confirmer avec l’artisan.");return}
+if(b.dataset.f!==undefined){var i=+b.dataset.f,k=S.fav.indexOf(i);k>-1?S.fav.splice(k,1):S.fav.push(i);sv();rd();return}
+if(b.dataset.c){S.cat=b.dataset.c;rd();return}
+if(b.dataset.t){S.tab=b.dataset.t;$("ov").classList.remove("show");rd();window.scrollTo(0,0)}});
+$("q").addEventListener("input",function(e){S.q=e.target.value;var m=$("m");rd();$("q").focus()});
+ld();rd();
+function splash(){var s=$("sp");$("sn").textContent=t("t1");$("ss").textContent=t("t2");function go(){s.classList.add("out");setTimeout(function(){s.style.display="none"},500)}s.addEventListener("click",go);setTimeout(go,1600)}
+splash();
+</script>
+</body>
+</html>
